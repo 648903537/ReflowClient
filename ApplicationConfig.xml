@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ScreenPrinter>
+  <TowerLight>
+    <LIGHT_CHANNEL_ON>01 05 00 00 00 00 CD CA</LIGHT_CHANNEL_ON>
+    <LIGHT_CHANNEL_OFF>01 05 00 00 FF 00 8C 3A</LIGHT_CHANNEL_OFF>
+    <IO_BOX_CONNECT>5;9600;8;0;1;none</IO_BOX_CONNECT>
+    <!--  5;9600;8;0;1;none-->
+  </TowerLight>
+  <LoginParameters>
+    <LogInType>USB</LogInType>
+    <LoadExtractPattern>^(\S.*);(\S.*)$</LoadExtractPattern>
+  </LoginParameters>
+  <ScannerParameters>
+    <SerialPort></SerialPort>
+    <BaudRate>9600</BaudRate>
+    <Parity>0</Parity>
+    <StopBits>1</StopBits>
+    <DataBits>8</DataBits>
+    <NewLineSymbol>\r</NewLineSymbol>
+    <High>05 4F 55 54 01</High>
+    <!--ESC[CESC[BESCOA1ESCIA#-->
+    <Low>ESC[CESC[BESCOA0ESCIA#</Low>
+    <EndCommand>ESCIA!ESC[A</EndCommand>
+  </ScannerParameters>
+  <GlobalParameters>
+    <Language>ZHS</Language>
+    <!--US,ZHS-->
+    <AUTH_TEAM></AUTH_TEAM>
+    <IPAddress>127.0.0.1</IPAddress>
+    <Port>50100</Port>
+    <MBNExtractPattern>^R\S*$</MBNExtractPattern>
+    <!--^(MBN)\S*$;[^(MBN)]*$-->
+    <DLExtractPattern>^\S*$</DLExtractPattern>
+    
+    <EquipmentExtractPattern>^JBE\S.*$|^EQ.*$</EquipmentExtractPattern>
+    
+    <OpacityValue>70</OpacityValue>
+    <!-- 悬浮框的位置   1071,675-->
+    <LocationXY>1071|675</LocationXY>
+    <OutputEnter>1</OutputEnter>
+    <DataOutputInterface>COM</DataOutputInterface>
+    <NoRead>NO Read</NoRead>
+    <FilterByFileName>enable</FilterByFileName>
+    <!--enable/disable-->
+    <FileNamePattern>^(\S{7}) \S.*$</FileNamePattern>
+    <RefreshWO>Y</RefreshWO>
+    <IPI_STATUS_CHECK>ENABLE</IPI_STATUS_CHECK>
+    <!--ENABLE / DISABLE-->
+    <Production_Inspection_CHECK>DISABLE</Production_Inspection_CHECK>
+    <!--ENABLE / DISABLE-->
+    
+    <!--Stencil use time hr-->
+    <StencilPrefix>(MB|SQ).*</StencilPrefix>
+    <ReduceEquType>1</ReduceEquType>
+    <!--0. according to workplace 1. according attribute(USAGE_COUNT/MAX_USAGE)-->
+    
+  </GlobalParameters>
+  <Checklist>
+    <CHECKLIST_SOURCE>table</CHECKLIST_SOURCE>
+    <!--table/xml-->
+    <CHECKLIST_IPAddress>192.168.70.16</CHECKLIST_IPAddress>
+    <CHECKLIST_Port>50200</CHECKLIST_Port>
+    <AUTH_CHECKLIST_APP_TEAM>IPQC,1;IPQC,1</AUTH_CHECKLIST_APP_TEAM>
+    <!--Supervisor,IPQC-->
+    <CHECKLIST_FREQ>M10,4;,0.1</CHECKLIST_FREQ>
+    <!--M10,4;,2!-->
+    <SHIFT_CHANGE_TIME>0800;1620</SHIFT_CHANGE_TIME>
+    <RESTORE_TREAD_TIMER>60</RESTORE_TREAD_TIMER>
+    <!--60s -->
+    <RESTORE_TIME>10</RESTORE_TIME>
+    <!-- 10mins -->
+  </Checklist>
+  <Folders>
+    <LogFileFolder>D:\files\</LogFileFolder>
+    <LogTransOK>D:\files\transOK\</LogTransOK>
+    <LogTransError>D:\files\transError\</LogTransError>
+    <ChangeFileName>Disable</ChangeFileName>
+    <!--Enable: change file name; Disable: don't change file name-->
+    <CEHCKTXTFILE>NO</CEHCKTXTFILE>
+    <!--YES -upload by TXT-->
+    <CheckListFolder>D:\CheckList\</CheckListFolder>
+    <MDAPath>D:\MDA</MDAPath>
+    <FILE_CLEANUP>1</FILE_CLEANUP>
+    <!--days-->
+    <FILE_CLEANUP_TREAD_TIMER>60</FILE_CLEANUP_TREAD_TIMER>
+    <!--60s -->
+    <CHECKCONECTTIME>2</CHECKCONECTTIME>
+    <!--单位秒 CHECKCONECTTIME -->
+    <Graphics>
+      <LAYER_DISPLAY>TOP_GRAPHIC;BOT_GRAPHIC</LAYER_DISPLAY>
+    </Graphics>
+  <FILE_CLEANUP_FOLDER_TYPE>1</FILE_CLEANUP_FOLDER_TYPE>
+    <!--0 ERROR,1 OK,2 OK&ERROR-->
+  </Folders>
+</ScreenPrinter>
